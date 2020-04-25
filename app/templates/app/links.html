@@ -1,0 +1,22 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+<div class="o_nas">    
+    <h2>{{ title }}.</h2>
+    <h3>{{ message }}</h3>
+
+    <table>
+        <tr>
+            <td align="center"><a href ="http://radius47.ru/" target="_blank"> <img src="{% static 'app/content/radius.png' %}" alt="Logo 1" width="300px" height="200px"/></a></td>
+            <td align="center"><a href ="https://spb.zzap.ru/" target="_blank"> <img src="{% static 'app/content/zzap.png' %}" alt="Logo 2" width="300px" height="200px"/></a></td>
+            <td align="center"><a href ="https://www.astaworld.ru/" target="_blank"> <img src="{% static 'app/content/asta.png' %}" alt="Logo 3" width="300px" height="200px"/></a></td>
+        </tr>
+        <tr>
+            <td><p>Автосервис «Radius»</p> <p>Предлагает большой выбор услуг по обслуживанию автомобиля, а также диагностические карты и помощь в автостраховании</p></td>
+            <td><p>Интернет магазин поиска запчастей "Zzap.ru"</p><p>Вы всегда имеете возможность свободно выбрать на сайте того поставщика автозапчастей, который предложит наиболее выгодные цены и высококачественные детали.</p></td>
+            <td><p>Компания "АСТА ассоциация"</p><p>Компания осуществляет поставки запчастей для легковых и грузовых автомобилей отечественного и зарубежного производства, а также спецтехники и тракторов.</p></td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

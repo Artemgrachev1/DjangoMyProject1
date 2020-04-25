@@ -1,0 +1,61 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="o_nas">
+                    <section id="banner">
+                         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="{% static 'app/content/volvo.png'%} " alt="Первый слайд" class="img-responsive" />
+                                    <div class="carousel-caption" role="option">
+                                            <button onclick="document.location='9'" class="button1"><span>Перейти к статье блога</span></button>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="{% static 'app/content/lexus.png'%}" alt="Второй слайд"  class="img-responsive" />
+                                    <div class="carousel-caption" role="option">
+                                            <button onclick="document.location='11'" class="button1"><span>Перейти к статье блога</span></button>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="{% static 'app/content/pejo.png'%}" alt="Третий слайд"  class="img-responsive" />
+                                    <div class="carousel-caption" role="option">
+                                            <button onclick="document.location='12'" class="button1"><span>Перейти к статье блога</span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+
+                        </div>
+                    </section>
+          <h3>Вводное слово</h3>
+          <p>
+              Колесо – автосервис в городе Псков. Мы хотим на своем примере изменить отношение автомобилистов к автосервисам. Мы ценим честность и открытость в отношениях с нашими клиентами. Ремонт автомобилей у нас – это гарантия не только высокого качества оказываемых услуг, но и того, что все происходящее с Вашим автомобилем будет понятно и технически обосновано.
+          </p>
+          <p>
+              Стараемся обеспечить высокий уровень сервиса автомобилей и максимально охватить все этапы цикла диагностики, ремонта и технического обслуживания авто. Обслуживая свою машину у нас, Вы можете не тревожиться ни о чём. Все стадии процесса будут профессионально организованы. Вам достаточно привезти неисправный авто, и получить его обратно уже отремонтированным. Нет необходимости тратить силы и время на поиск необходимых деталей и расходных материалов. Купить запчасти для автомобиля можно у нас. При этом у Вас всегда будет возможность посетить нашу ремонт зону, увидеть, что и как делается, и получить аргументированные ответы на любые поставленные вопросы. По всем авто ведется история обслуживания – в любой момент можно уточнить, какие работы и когда проводились, и какие запчасти использовались. 
+          </p> 
+          <p>
+              Предлагаем запчасти для машин, расходные материалы и технические жидкости. Предпочитаем работать с официальными представителями, что гарантирует высокое качество продаваемой продукции и дает возможность выполнять гарантийные обязательства почти по всем группам товаров. Наш опыт позволяет выбирать оптимальные автозапчасти по соотношению цена/качество, что помогает экономить на ремонте без ухудшения его результатов. 
+          </p>  
+</div>
+{% endblock %}

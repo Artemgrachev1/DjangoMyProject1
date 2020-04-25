@@ -1,0 +1,31 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="o_nas">
+    <h2>{{ post_1.title }}</h2>
+    {% if post_1.image and post_1.image.url != '/media/temp.jpg' %}
+        <img src="{{ post_1.image.url }}" alt="Картинка" width="300px" height="200px" />
+    {% endif %}
+    <p> {{post_1.content|linebreaksbr}} </p>    {# вывод текста по абзацам #}
+    <p><a href="{% url 'blog' %}">Назад</a></p>
+
+    {% if user.is_authenticated %}
+     <h3>Оставить комментарий</h3>
+     <form method="POST">{% csrf_token %}    {# защита от атак CSRF #}
+        <div>
+            {{form.as_p}}<br />
+            <button type="submit" class="save btn btn-default">Отправить комментарий</button>
+        </div>
+     </form>
+    {% else %}
+        <h3>Чтобы оставить комментарий, пожалуйста, авторизуйтесь.</h3>
+    {% endif %}
+
+    {% for comment in comments %}
+    <hr />
+    <h7>{{comment.date}}</h7>
+    <h5>{{comment.author}}</h5>
+    <p>{{comment.text|linebreaksbr}}</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="o_nas">
+    <h2>Регистрация пользователя</h2>
+
+    <form method="POST" > {% csrf_token %}
+
+        <div>
+           
+            {{ regform.as_p}}
+
+            <button type="submit" class="save btn btn-default" > Зарегистрироваться </button>
+
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}

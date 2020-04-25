@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="o_nas">
+    <h2>{{ title }}.</h2>
+    <h3>{{ message }}</h3>
+
+    <address>
+        Автосервис "Колесо"<br />
+        Ул.Леона Поземского, д.11<br />
+        <abbr title="Телефон">Тел:</abbr>
+        +79922341767
+    </address>
+    
+   <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A55d19a6671af7111a793d3bb5c1d81ea8cd2dcbc98685f5e7023f523efed66ed&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+
+    <address>
+        <strong>Техническая поддержка</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Отдел маркетинга</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+</div>
+{% endblock %}

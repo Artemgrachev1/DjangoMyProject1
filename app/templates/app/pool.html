@@ -1,0 +1,138 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="o_nas">
+    {% if form != None %}
+    <h2>{{ title }}</h2>
+    <h3>{{ message }}</h3>
+            <section id="PoolForm">
+                <form method="POST" class="form-horizontal">
+                    {% csrf_token %}
+                    <label for = "{{ form.name.id_for_label }}"> {{ form.name.label }}: </label><br>
+                        {{ form.name }}<br><br>
+                    <label for = "{{ form.city.id_for_label }}"> {{ form.city.label }}: </label><br>
+                        {{ form.city }}<br><br>
+                    <label for = "{{ form.gender.id_for_label }}"> {{ form.gender.label }}: </label><br>
+                        {{ form.gender }}<br><br>
+                    <label for = "{{ form.job.id_for_label }}"> {{ form.job.label }}: </label><br>
+                        {{ form.job }}<br><br>
+                    <label for = "{{ form.trial.id_for_label }}"> {{ form.trial.label }}: </label><br>
+                        {{ form.trial }}<br><br>
+                    <label for = "{{ form.notice.id_for_label }}"> {{ form.notice.label }}: </label><br>
+                        {{ form.notice }}<br><br>
+                    <label for = "{{ form.email.id_for_label }}"> {{ form.email.label }}: </label><br>
+                        {{ form.email }}<br><br>
+                    <label for = "{{ form.message.id_for_label }}"> {{ form.message.label }}: </label><br>
+                        {{ form.message }}<br><br>
+                    <input type="submit" value="Отправить" class="submit_btn" />
+                </form>
+            </section>
+
+    {% else %}
+            <br><h2>Спасибо что заполнили анкету!</h2>
+            <h3>Следующая информация о Вас сохранена в нашей базе:</h3>
+            <ul>
+                <li><span>Имя: </span> {{ data.name }} </li>
+                <li><span>Город: </span> {{ data.city }} </li>
+                <li><span>Пол: </span> {{ data.gender }} </li>
+                <li><span>Род деятельности: </span> {{ data.job }} </li>
+                <li><span>Посещали ли Вы наш автосервис: </span> {{ data.trial }} </li>
+                <li><span>Рассылка E-mail: </span> {{ data.notice }} </li>
+                <li><span>Ваш E-mail: </span> {{ data.email }} </li>
+                <li><span>Мнение об автосервисе: </span> {{ data.message }} </li>
+            </ul>
+    {% endif %}
+</div>
+    <script>
+
+        function button_mouse()
+        {
+            $('.submit_btn').css('color', 'indigo');
+            $('.submit_btn').css('background-color', 'yellow');
+        }
+
+        function button_mouseleave()
+        {
+            $('.submit_btn').css('color', 'black');
+            $('.submit_btn').css('background-color', 'white');
+        }
+
+        function field_name()
+        {
+        $('#id_name').css('background-color','cyan');
+        }
+        function field_name2()
+        {
+         $('#id_name').css('background-color','white');
+        }
+        function field_city()
+        {
+         $('#id_city').css('background-color','cyan');
+        }
+        function field_city2()
+        {
+         $('#id_city').css('background-color','white');
+        }
+        function field_job()
+        {
+         $('#id_job').css('background-color','cyan');
+        }
+        function field_job2()
+        {
+         $('#id_job').css('background-color','white');
+        }
+        function field_trial()
+        {
+         $('#id_trial').css('background-color', 'cyan');
+        }
+        function field_trial2()
+        {
+         $('#id_trial').css('background-color', 'white');
+        }
+        function field_notice()
+        {
+         $('#id_notice').css('background-color', 'cyan');
+        }
+        function field_notice2()
+        {
+         $('#id_notice').css('background-color', 'white');
+        }
+        function field_email()
+        {
+         $('#id_email').css('background-color', 'cyan');
+        }
+        function field_email2()
+        {
+         $('#id_email').css('background-color', 'white');
+        }
+        function field_message()
+        {
+         $('#id_message').css('background-color','cyan');
+        }
+        function field_message2()
+        {
+         $('#id_message').css('background-color','white');
+        }
+    
+        $('.submit_btn').mouseover(button_mouse);
+        $('.submit_btn').mouseout(button_mouseleave);
+
+        $('#id_name').mouseover(field_name);
+        $('#id_name').mouseout(field_name2);
+        $('#id_city').mouseover(field_city);
+        $('#id_city').mouseout(field_city2);
+        $('#id_job').mouseover(field_job);
+        $('#id_job').mouseout(field_job2);
+        $('#id_trial').mouseover(field_trial);
+        $('#id_trial').mouseout(field_trial2);
+        $('#id_notice').mouseover(field_notice);
+        $('#id_notice').mouseout(field_notice2);
+        $('#id_email').mouseover(field_email);
+        $('#id_email').mouseout(field_email2);
+        $('#id_message').mouseover(field_message);
+        $('#id_message').mouseout(field_message2);
+
+    </script>
+
+{% endblock %}
